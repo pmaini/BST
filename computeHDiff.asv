@@ -1,0 +1,15 @@
+function computeHDiff(tree,)
+
+
+    if tree(parent).lChild == 0
+        tree(parent).hDiff = tree(tree(parent).rChild).height;
+    else
+        tree(parent).hDiff = abs(tree(tree(parent).lChild).height ... 
+            - tree(tree(parent).rChild).height);
+    end
+    if tree(parent).rChild == 0
+        tree(parent).hDiff = tree(tree(parent).lChild).height;
+    else
+        tree(parent).hDiff = abs(tree(tree(parent).lChild).height ... 
+            - tree(tree(parent).rChild).height);
+    end
