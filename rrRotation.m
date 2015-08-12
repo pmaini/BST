@@ -6,14 +6,16 @@ if tree(bugNode).parent ~= 0
         tree(tree(bugNode).parent).rChild = childNode;
     end
 else
-     root = childNode;
+    root = childNode;
 end
 tree(childNode).parent = tree(bugNode).parent;
 tree(bugNode).parent = childNode;
 tree(bugNode).rChild = tree(childNode).lChild;
-tree(tree(childNode).lChild).parent = bugNode;
+if (tree(childNode).lChild~=0)
+    tree(tree(childNode).lChild).parent = bugNode;
+end
 tree(childNode).lChild = bugNode;
 tree = computeHeight(tree,bugNode);
 tree = computeHDiff(tree,bugNode);
-tree = computeHeight(tree,childNode);
-tree = computeHDiff(tree,childNode);
+tree = computeHeight(tree,tree(childNode).lChild);
+tree = computeHDiff(tree,tree(childNode).lChild);

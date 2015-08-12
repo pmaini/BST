@@ -1,4 +1,6 @@
 function tree = computeHeight(tree,nodeID)
+%updates the hDiff (height difference) for all nodes on the path 
+%from root to nodeID
 
 while (nodeID~=0)    
     lCode = 0;
