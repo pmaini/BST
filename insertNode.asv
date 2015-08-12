@@ -5,9 +5,8 @@ function [tree,root] = insertNode(tree,root,value)
 if ~isempty(tree)
     [valueIndex,~,~] = searchTree(tree,root,value);
     if valueIndex ~= 0
-        disp(['Value already exists at index: ' num2str(valueIndex)]); 
-        promptMsg = 'Press return to continue...';
-        msgInput = input(promptMsg);
+        promptMsg = (['Value already exists at index: ' num2str(valueIndex)]); 
+        msgIninput = 
         return;
     end
 end

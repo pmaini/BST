@@ -11,6 +11,9 @@ while (true)
     disp('Enter 4 to exit an element');
     promptStr = 'Enter your choice: ';
     inputNum = input(promptStr);
+    if isempty(inputNum)
+        inputNum = 0;
+    end
     switch inputNum
         case 1
             promptInsert = 'Enter the number to insert: ';
@@ -19,8 +22,16 @@ while (true)
         case 2
             
         case 3
-            
+            promptSearch = 'Enter the number to search: ';
+            searchNum = input(promptSearch);
+            [nodeIndex path valuePath] = searchTree(tree,root,searchNum);
+            tree(nodeIndex)
+            disp(num2str(path));
+            disp(num2str(valuePath));
+            promptMsg = 'Press return to continue...';
+            msgNum = input(promptMsg);
         case 4
-            
+            return;
+        otherwise
     end
 end
